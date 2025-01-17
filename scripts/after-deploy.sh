@@ -16,4 +16,5 @@ if [ ! -d "$REPOSITORY/dist" ]; then
 fi
 
 # pm2 실행
-pm2 start dist || { echo "PM2 실행에 실패했습니다."; exit 1; }
+pm2 start pm2 start /home/ubuntu/build/dist/app.js || { echo "PM2 실행에 실패했습니다."; exit 1; }
+ || { echo "PM2 실행에 실패했습니다."; exit 1; }
