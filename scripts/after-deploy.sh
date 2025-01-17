@@ -4,7 +4,7 @@ REPOSITORY=/home/ubuntu/build
 cd $REPOSITORY
 
 # 환경 변수 추가
-export PATH=/root/.nvm/versions/node/v22.13.0/bin:$PATH
+export PATH=$PATH:/home/ubuntu/.nvm/versions/node/v22.13.0/bin
 
 # yarn 실행
 yarn || { echo "Yarn 설치 또는 실행에 실패했습니다."; exit 1; }
