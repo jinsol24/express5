@@ -3,6 +3,17 @@ REPOSITORY=/home/ubuntu/build
 
 cd $REPOSITORY
 
-sudo yarn
+# 환경 변수 추가
+export PATH=/root/.nvm/versions/node/v22.13.0/bin:$PATH
 
-sudo pm2 start dist
+# yarn 실행
+sudo yarn || { echo "Yarn 설치 또는 실행에 실패했습니다."; exit 1; }
+
+# dist 디렉토리 확인
+if [ ! -d "$REPOSITORY/dist" ]; then
+    echo "dist 디렉토리가 없습니다. 빌드가 올바르게 완료되지 않았습니다."
+    exit 1
+fi
+
+# pm2 실행
+sudo pm2 start dist || { echo "PM2 실행에 실패했습니다."; exit 1; }
