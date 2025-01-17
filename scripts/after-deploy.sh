@@ -7,7 +7,7 @@ cd $REPOSITORY
 export PATH=/root/.nvm/versions/node/v22.13.0/bin:$PATH
 
 # yarn 실행
-sudo yarn || { echo "Yarn 설치 또는 실행에 실패했습니다."; exit 1; }
+yarn || { echo "Yarn 설치 또는 실행에 실패했습니다."; exit 1; }
 
 # dist 디렉토리 확인
 if [ ! -d "$REPOSITORY/dist" ]; then
@@ -16,4 +16,4 @@ if [ ! -d "$REPOSITORY/dist" ]; then
 fi
 
 # pm2 실행
-sudo pm2 start dist || { echo "PM2 실행에 실패했습니다."; exit 1; }
+pm2 start dist || { echo "PM2 실행에 실패했습니다."; exit 1; }
